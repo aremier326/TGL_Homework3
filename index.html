@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/1cef3da710.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"/>
-        <title>TODO List</title>
+        <title>Task Planner</title>
         <script src="script.js"></script>
     </head>
     <body>
@@ -16,10 +16,22 @@
                 <button><i class="fa-solid fa-plus"></i></button>
             </div>
 
-            <ul id ="data">
-                <li><p>first task</p><i class="fa-solid fa-pen"></i><i class="fa-solid fa-trash"></i></li>
-                <li><p>first task</p><i class="fa-solid fa-pen"></i><i class="fa-solid fa-trash"></i></li>
-                <li><p>first task</p><i class="fa-solid fa-pen"></i><i class="fa-solid fa-trash"></i></li>
+            <ul id ="items" class="to-do-items">
+                <li class="to-do-item">
+                    <button class="check"><i class="fa-solid fa-check"></i></button>
+                    <p class="task-text">first task</p>
+                    <button class="trash"><i class="fa-solid fa-trash"></i></button>
+                </li>
+                <li class="to-do-item">
+                    <button class="check"><i class="fa-solid fa-check"></i></button>
+                    <p class="task-text">first task</p>
+                    <button class="trash"><i class="fa-solid fa-trash"></i></button>
+                </li>
+                <li class="to-do-item">
+                    <button class="check"><i class="fa-solid fa-check"></i></button>
+                    <p class="task-text">first task</p>
+                    <button class="trash"><i class="fa-solid fa-trash"></i></button>
+                </li>
             </ul>
         </div>
     </body>
