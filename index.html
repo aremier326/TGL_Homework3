@@ -6,33 +6,24 @@
         <script src="https://kit.fontawesome.com/1cef3da710.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"/>
         <title>Task Planner</title>
-        <script src="script.js"></script>
     </head>
     <body>
         <div class="wrapper">
             <h1><span class="title">Task Planner</span></h1>
             <div class="inputBox">
-                <input type="text" class="input" placeholder="I want to...">
-                <button><i class="fa-solid fa-plus"></i></button>
+                <input type="text" id="input" placeholder="I want to...">
+                <button type="submit" id="btn-input"><i class="fa-solid fa-plus"></i></button>
             </div>
-
-            <ul id ="items" class="to-do-items">
-                <li class="to-do-item">
-                    <button class="check"><i class="fa-solid fa-check"></i></button>
-                    <p class="task-text">first task</p>
-                    <button class="trash"><i class="fa-solid fa-trash"></i></button>
-                </li>
-                <li class="to-do-item">
-                    <button class="check"><i class="fa-solid fa-check"></i></button>
-                    <p class="task-text">first task</p>
-                    <button class="trash"><i class="fa-solid fa-trash"></i></button>
-                </li>
-                <li class="to-do-item">
-                    <button class="check"><i class="fa-solid fa-check"></i></button>
-                    <p class="task-text">first task</p>
-                    <button class="trash"><i class="fa-solid fa-trash"></i></button>
-                </li>
-            </ul>
+            <div>
+                <ul id ="items-list" class="to-do-items">
+                    <li class="to-do-item">
+                        <button class="check"><i class="fa-solid fa-check"></i></button>
+                        <p class="task-text">hello world</p>
+                        <button class="trash"><i class="fa-solid fa-trash"></i></button>
+                    </li>
+                </ul>
+            </div>
         </div>
+        <script src="script.js"></script>
     </body>
 </html>

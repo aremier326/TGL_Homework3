@@ -16,8 +16,9 @@ body {
     flex-direction: column;
     background-color: #edf2f4;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-    width: 40%;
-    margin: 10% auto;
+    width: 45%;
+    min-width: 30rem;
+    margin: 5% auto;
     padding: 3px;
 }
 
@@ -27,6 +28,8 @@ body {
     justify-content: center;
     align-items: center;
     margin: 5% 0;
+    width:100;
+    overflow: hidden;
 }
 
 .wrapper .inputBox input,
@@ -59,12 +62,17 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+.wrapper .to-do-items {
+    background-color: #fff;
+}
+
 .wrapper .to-do-items .to-do-item {
     display: flex;
     width: 100%;
     height: auto;
     margin-top: 3px;
     transition: all 0.3s ease;
+    align-self: stretch;
 }
 
 .wrapper .to-do-items .to-do-item:hover {
@@ -79,12 +87,16 @@ body {
     background-color: #fff;
     font-size: 1.7rem;
     cursor: pointer;
-    
+    flex-grow: 1;
+    overflow: hidden;
 }
+
 
 .wrapper .to-do-items button {
     flex: 1;
     position: relative;
+    height: 4.5rem;
+    align-self: top;
 }
 
 .wrapper .to-do-items p {
@@ -106,5 +118,14 @@ body {
     color: #fff;
     background-color: #99d98c;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.fa-trash, .fa-check, .fa-plus {
+    pointer-events: none;
+}
+
+.checked {
+    opacity: 0.3;
+    text-decoration: line-through;
 }
 
