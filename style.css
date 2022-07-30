@@ -72,7 +72,6 @@ body {
     height: auto;
     margin-top: 3px;
     transition: all 0.3s ease;
-    align-self: stretch;
 }
 
 .wrapper .to-do-items .to-do-item:hover {
@@ -127,5 +126,16 @@ body {
 .checked {
     opacity: 0.3;
     text-decoration: line-through;
+}
+
+.inputEdit {
+    display:flex;
+    height: auto;
+    padding: 1rem;
+    border: none;
+    background-color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+    overflow: hidden;
 }
 

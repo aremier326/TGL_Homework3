@@ -1,17 +1,19 @@
+// DOM elements.
+
 const inputText = document.getElementById('input');
 const inputButton = document.getElementById('btn-input');
 const list = document.getElementById('items-list');
 
-inputButton.addEventListener('click', (e) => {
+// task add with some additional verification.
+const addTaskChecked = (e) => {
     if(inputText.value != "") {
         addTask(inputText.value);
     } else {
         alert('Fill the input field in you want to add something!');
     }
-});
+}
 
-
-
+// Method for adding task.
 const addTask = (text) => {
     //li tag
     const toDoItemLi = document.createElement('li');
@@ -38,33 +40,82 @@ const addTask = (text) => {
     inputText.value = "";
 }
 
-
-deleteTask = (element) => {
-    element.parentElement.remove();
-}
-
-markAsDone = (element) => {
-    lastItemInClassList = element.parentElement.classList[element.parentElement.classList.length - 1];
-    if (lastItemInClassList !== 'checked') {
-        console.log('checked added');
-        element.parentElement.classList.add('checked');
-    } else {
-        console.log('checked removed');
-        element.parentElement.classList.remove(element.parentElement.classList[1]);
-    }
-}
-
-list.addEventListener('click', (event) => {
-    switch (event.target.className) {
+// Method for interacting with task nodes.
+const taskActions = (e) => {
+    switch (e.target.className) {
         case 'check':
-            //mark item done
-            markAsDone(event.target);
+            //mark item as done.
+            markAsDone(e.target);
             break;
         case 'task-text':
             //edit
+            if (!isChecked(e.target)) {
+                showInputEditor(e.target);
+            }
             break;
         case 'trash':
-            deleteTask(event.target);
+            //permanently delete task.
+            deleteTask(e.target);
             break;
     }
-})
+}
+
+// Method for deleting task.
+const deleteTask = (element) => {
+    element.parentElement.remove();
+}
+
+// Method for marking task as done.
+const markAsDone = (element) => {
+    const list = element.parentElement.classList;
+    if (!isChecked(element)) {
+        console.log('checked added');
+        list.add('checked');
+    } else {
+        console.log('checked removed');
+        list.remove(list[list.length - 1]);
+    }
+}
+
+// Temp value for storing preedited text.
+let initialNode;
+
+// Method for editing text in task.
+const showInputEditor = (element) => {
+    const parent = element.parentNode;
+    initialNode = element;
+    const itemInput = document.createElement('input');
+    itemInput.type = 'text';
+    itemInput.value = element.innerHTML;
+    itemInput.classList.add('inputEdit');
+    
+    parent.replaceChild(itemInput, element);
+    itemInput.select();
+
+    itemInput.addEventListener('click', saveItem);
+    itemInput.addEventListener('focusout', saveItem);
+}
+
+// Method for saving item during or after edit.
+const saveItem = (e) => {
+    const inputValue = e.target.value;
+    if (inputValue.length > 0) {
+        const pText = document.createElement('p');
+        pText.classList.add('task-text');
+        pText.innerText = inputValue;
+        e.target.parentNode.replaceChild(pText, e.target);
+    } else {
+        e.target.parentNode.replaceChild(initialNode, e.target);
+    }
+}
+
+// Additional method for check if the task is marked as done.
+const isChecked = (element) => {
+    lastItemInClassList = element.parentElement.classList[element.parentElement.classList.length - 1];
+    return lastItemInClassList === 'checked';
+}
+
+// Events
+
+inputButton.addEventListener('click', addTaskChecked);
+list.addEventListener('click', taskActions)
