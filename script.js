@@ -44,17 +44,17 @@ const addTask = (text) => {
 const taskActions = (e) => {
     switch (e.target.className) {
         case 'check':
-            //mark item as done.
+            // mark item as done.
             markAsDone(e.target);
             break;
         case 'task-text':
-            //edit
+            // edit
             if (!isChecked(e.target)) {
                 showInputEditor(e.target);
             }
             break;
         case 'trash':
-            //permanently delete task.
+            // delete task.
             deleteTask(e.target);
             break;
     }
