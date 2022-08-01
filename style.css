@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(50,222,138);
+    background: linear-gradient(90deg, rgba(50,222,138,1) 0%, rgba(119,156,171,1) 40%, rgba(162,232,221,1) 100%);
+}
+
+.wrapper {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    background-color: #edf2f4;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    width: 45%;
+    min-width: 30rem;
+    margin: 5% auto;
+    padding: 3px;
+}
+
+.wrapper .title,
+.wrapper .inputBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0;
+    width:100;
+    overflow: hidden;
+}
+
+.wrapper .inputBox input,
+.wrapper .inputBox button {
+    padding: 2rem;
+    font-size: 2rem;
+    border: none;
+    background-color: #fff;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wrapper .inputBox:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper .inputBox:focus-within {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper .inputBox button {
+    flex: 1;
+}
+
+.wrapper .inputBox button:hover {
+    color: #fff;
+    background-color: #43aa8b;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper .to-do-items {
+    background-color: #fff;
+}
+
+.wrapper .to-do-items .to-do-item {
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 3px;
+    transition: all 0.3s ease;
+}
+
+.wrapper .to-do-items .to-do-item:hover {
+    border-color: #edf2f4;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper .to-do-items button,
+.wrapper .to-do-items p {
+    padding: 1rem;
+    border: none;
+    background-color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+
+.wrapper .to-do-items button {
+    flex: 1;
+    position: relative;
+    height: 4.5rem;
+    align-self: top;
+}
+
+.wrapper .to-do-items p {
+    flex: 9;
+}
+
+.wrapper .to-do-items .to-do-item .trash,
+.wrapper .to-do-items .to-do-item .check {
+    transition: all 0.3s ease;
+}
+
+.wrapper .to-do-items .to-do-item .trash:hover {
+    color: #fff;
+    background-color: #e63946;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper .to-do-items .to-do-item .check:hover {
+    color: #fff;
+    background-color: #99d98c;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.fa-trash, .fa-check, .fa-plus {
+    pointer-events: none;
+}
+
+.checked {
+    opacity: 0.3;
+    text-decoration: line-through;
+}
+
+.inputEdit {
+    display:flex;
+    height: auto;
+    padding: 1rem;
+    border: none;
+    background-color: #fff;
+    font-size: 1.7rem;
+    cursor: pointer;
+    overflow: hidden;
+}
